@@ -1,12 +1,12 @@
 <?php return array (
   'root' => 
   array (
-    'pretty_version' => '1.0.0+no-version-set',
-    'version' => '1.0.0.0',
+    'pretty_version' => 'dev-master',
+    'version' => 'dev-master',
     'aliases' => 
     array (
     ),
-    'reference' => NULL,
+    'reference' => '56db03a0fc0cdb6c8153cd4a0aec37fc9b21e954',
     'name' => 'richa/bienesraices_inicio',
   ),
   'versions' => 
@@ -56,12 +56,12 @@
     ),
     'richa/bienesraices_inicio' => 
     array (
-      'pretty_version' => '1.0.0+no-version-set',
-      'version' => '1.0.0.0',
+      'pretty_version' => 'dev-master',
+      'version' => 'dev-master',
       'aliases' => 
       array (
       ),
-      'reference' => NULL,
+      'reference' => '56db03a0fc0cdb6c8153cd4a0aec37fc9b21e954',
     ),
   ),
 );
