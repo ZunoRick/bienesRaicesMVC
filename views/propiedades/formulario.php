@@ -10,7 +10,7 @@
     <label for="imagen">Imagen:</label>
     <input type="file" id="imagen" accept="image/jpeg image/png" name="propiedad[imagen]">
     <?php if($propiedad->imagen):?>
-        <img src="/imagenes/<?php echo $propiedad->imagen?>" class="imagen-small" alt="<?php echo "Imagen ".$propiedad->titulo?>">
+        <img src="/public/imagenes/<?php echo $propiedad->imagen?>" class="imagen-small" alt="<?php echo "Imagen ".$propiedad->titulo?>">
     <?php endif;?>
     <label for="descripcion">Descripción:</label>
     <textarea name="propiedad[descripcion]" id="descripcion" cols="30" rows="10"><?php echo sane($propiedad->descripcion);?></textarea>

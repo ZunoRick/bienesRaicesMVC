@@ -41,7 +41,7 @@
                             <!-- <img src="/build/img/trash-alt.svg" class="icono-boton"> -->
                                 
                             </a>
-                            <a href="propiedades/actualizar.php?id=<?php echo $propiedad->id; ?>" class="boton-amarillo-block">
+                            <a href="/public/propiedades/actualizar?id=<?php echo $propiedad->id; ?>" class="boton-amarillo-block">
                                 <img src="/public/build/img/edit.svg" class="icono-boton editar">
                                 Actualizar
                             </a>
