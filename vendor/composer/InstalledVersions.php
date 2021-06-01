@@ -32,7 +32,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '21b7a957d0fe87e0c32a19c207f8e010fb00a2d4',
+    'reference' => '9cec424178dbf9ad6fdfa890df6931e5bc48a5c1',
     'name' => 'richa/bienesraices_inicio',
   ),
   'versions' => 
@@ -54,6 +54,15 @@ private static $installed = array (
       array (
       ),
       'reference' => 'abbf18d5ab8367f96b3205ca3c89fb2fa598c69e',
+    ),
+    'phpmailer/phpmailer' => 
+    array (
+      'pretty_version' => 'v6.4.1',
+      'version' => '6.4.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '9256f12d8fb0cd0500f93b19e18c356906cbed3d',
     ),
     'psr/http-message' => 
     array (
@@ -87,7 +96,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '21b7a957d0fe87e0c32a19c207f8e010fb00a2d4',
+      'reference' => '9cec424178dbf9ad6fdfa890df6931e5bc48a5c1',
     ),
   ),
 );
