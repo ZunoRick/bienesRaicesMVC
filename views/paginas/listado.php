@@ -21,7 +21,7 @@
                     <p><?php echo $propiedad->habitaciones; ?></p>
                 </li>
             </ul>
-            <a href="anuncio.php?id=<?php echo $propiedad->id; ?>" class="boton-amarillo-block">Ver propiedad</a>
+            <a href="/public/propiedad?id=<?php echo $propiedad->id; ?>" class="boton-amarillo-block">Ver propiedad</a>
         </div><!--.contenido-anuncio-->
     </div><!--.anuncio-->
     <?php endforeach; ?>

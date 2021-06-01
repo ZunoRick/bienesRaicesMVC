@@ -11,7 +11,7 @@ class PaginasController{
         $inicio = true;
         $router->render('paginas/index', [
             'propiedades' => $propiedades,
-             'inicio' => $inicio
+            'inicio' => $inicio
         ]);
     }
 
@@ -19,12 +19,23 @@ class PaginasController{
         $router -> render('paginas/nosotros', []);
     }
 
-    public static function propiedades(){
-        echo "Desde propiedades";
+    public static function propiedades(Router $router){
+        $propiedades = Propiedad::all();
+        $router -> render('paginas/propiedades', [
+            'propiedades' => $propiedades
+        ]);
     }
 
-    public static function propiedad(){
-        echo "Desde propiedad";
+    public static function propiedad(Router $router){
+        $id = validarORedireccionar('/public/');
+        $propiedad = Propiedad::find($id);
+        
+        if (is_null($propiedad))
+            header("Location: /public/propiedades");
+
+        $router ->render('paginas/propiedad', [
+            'propiedad' => $propiedad
+        ]);
     }
 
     public static function blog(Router $router){
