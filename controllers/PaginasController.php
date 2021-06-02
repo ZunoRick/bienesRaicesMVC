@@ -60,6 +60,7 @@ class PaginasController
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             //Instantiation and passing `true` enables exceptions
+            $mensaje = null;
             $respuestas = $_POST['contacto'];
             $mail = new PHPMailer(true);
 
@@ -76,34 +77,42 @@ class PaginasController
                 //Recipients
                 $mail->setFrom('admin@bienesraices.com');
                 $mail->addAddress('admin@bienesraices.com', 'BienesRaices.com');     //Add a recipient
-                $mail->Subject = 'Nueva solicitud de '. $respuestas['tipo'];
-                
+                $mail->Subject = 'Nueva solicitud de ' . $respuestas['nombre'];
+
                 //Content
                 $contenido = '<html>';
                 $contenido .= '<p>Tienes un nuevo mensaje</p>';
-                $contenido .= '<p>Nombre: ' .$respuestas['nombre']. '</p>';
-                $contenido .= '<p>Email: ' .$respuestas['email']. '</p>';
-                $contenido .= '<p>Teléfono: ' .$respuestas['telefono']. '</p>';
-                $contenido .= '<p>Mensaje: ' .$respuestas['mensaje']. '</p>';
-                $contenido .= '<p>Vende o compra: ' .$respuestas['tipo']. '</p>';
-                $contenido .= '<p>Precio o presupuesto: $' .$respuestas['precio']. '</p>';
-                $contenido .= '<p>Prefiere ser contactado por: ' .$respuestas['contacto']. '</p>';
-                $contenido .= '<p>Fecha Contacto:' .$respuestas['fecha']. '</p>';
-                $contenido .= '<p>Hora:' .$respuestas['hora']. '</p>';
+                $contenido .= '<p>Nombre: ' . $respuestas['nombre'] . '</p>';
+                $contenido .= '<p>Mensaje: ' . $respuestas['mensaje'] . '</p>';
+                $contenido .= '<p>Prefiere ser contactado por: ' . $respuestas['contacto'] . '</p>';
+
+                //Enviar de forma condicional algunos campos de email o telefono
+                if ($respuestas['contacto'] === 'telefono') {
+                    $contenido .= '<p>Teléfono: ' . $respuestas['telefono'] . '</p>';
+                    $contenido .= '<p>Fecha Contacto:' . $respuestas['fecha'] . '</p>';
+                    $contenido .= '<p>Hora:' . $respuestas['hora'] . '</p>';
+                } else {
+                    $contenido .= '<p>Email: ' . $respuestas['email'] . '</p>';
+                }         
+
+                $contenido .= '<p>Vende o compra: ' . $respuestas['tipo'] . '</p>';
+                $contenido .= '<p>Precio o presupuesto: $' . $respuestas['precio'] . '</p>';
                 $contenido .= '</html>';
 
                 $mail->isHTML(true);  //Set email format to HTML
-                $mail->CharSet = 'UTF-8';                                
+                $mail->CharSet = 'UTF-8';
                 $mail->Body    = $contenido;
                 $mail->AltBody = 'Esto es texto alternativo sin HTML';
 
                 $mail->send();
-                // echo 'Message has been sent';
+                $mensaje = 'El mensaje fue enviado correctamente';
             } catch (Exception $e) {
-                echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+                $mensaje = "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
             }
         }
 
-        $router->render('paginas/contacto', []);
+        $router->render('paginas/contacto', [
+            'mensaje' => $mensaje
+        ]);
     }
 }
