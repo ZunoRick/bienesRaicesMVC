@@ -9,15 +9,15 @@
             <p class="precio">$<?php echo $propiedad->precio; ?></p>
             <ul class="iconos-caracteristicas">
                 <li>
-                    <img src="build/img/icono_wc.svg" alt="Icono WC" loading="lazy">
+                    <img src="/public/build/img/icono_wc.svg" alt="Icono WC" loading="lazy">
                     <p><?php echo $propiedad->wc; ?></p>
                 </li>
                 <li>
-                    <img src="build/img/icono_estacionamiento.svg" alt="Icono estacionamiento" loading="lazy">
+                    <img src="/public/build/img/icono_estacionamiento.svg" alt="Icono estacionamiento" loading="lazy">
                     <p><?php echo $propiedad->estacionamiento; ?></p>
                 </li>
                 <li>
-                    <img src="build/img/icono_dormitorio.svg" alt="Icono habitaciones" loading="lazy">
+                    <img src="/public/build/img/icono_dormitorio.svg" alt="Icono habitaciones" loading="lazy">
                     <p><?php echo $propiedad->habitaciones; ?></p>
                 </li>
             </ul>
