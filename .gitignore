@@ -1,4 +1,8 @@
 node_modules/
 vendor/
 public/imagenes/
-cypress/
+
+cypress/fixtures
+cypress/plugins
+cypress/support
+cypress/videos
