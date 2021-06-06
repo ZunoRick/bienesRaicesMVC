@@ -13,6 +13,7 @@
         ?>
         <a href="/public/propiedades/crear" class="boton boton-verde">Nueva Propiedad</a>
         <a href="/public/vendedores/crear" class="boton boton-amarillo">Nuevo(a) Vendedor</a>
+        <a href="/public/admin-blog" class="boton boton-amarillo">Administrar Blog</a>
         <h2>Propiedades</h2>
         <table class="propiedades">
             <thead>

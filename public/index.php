@@ -2,6 +2,7 @@
 
 require_once __DIR__ . '/../includes/app.php';
 
+use Controllers\BlogController;
 use Controllers\LoginController;
 use MVC\Router;
 use Controllers\PropiedadController;
@@ -25,6 +26,9 @@ $router->post('/vendedores/crear', [VendedorController::class, 'crear']);
 $router->get('/vendedores/actualizar', [VendedorController::class, 'actualizar']);
 $router->post('/vendedores/actualizar', [VendedorController::class, 'actualizar']);
 $router->post('/vendedores/eliminar', [VendedorController::class, 'eliminar']);
+
+//Blog
+$router->get('/admin-blog', [BlogController::class, 'listar']);
 
 //Zona pública
 $router->get('/', [PaginasController::class, 'index']);
