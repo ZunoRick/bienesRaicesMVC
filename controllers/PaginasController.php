@@ -105,7 +105,7 @@ class PaginasController
                 $mail->AltBody = 'Esto es texto alternativo sin HTML';
 
                 $mail->send();
-                $mensaje = 'El mensaje fue enviado correctamente';
+                $mensaje = 'El Mensaje fue Enviado Correctamente';
             } catch (Exception $e) {
                 $mensaje = "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
             }
