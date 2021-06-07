@@ -51,4 +51,13 @@ class EntradaBlog extends ActiveRecord
     public function actualizarFecha(){
         $this->fecha = date('Y/m/d');
     }
+
+    public function eliminarImagen(){
+        if ($this->imagen != 'ImagenBlog.jpg') {
+            $existeArchivo = file_exists(CARPETA_IMAGENES_BLOG . $this->imagen);
+            if ($existeArchivo) {
+                unlink(CARPETA_IMAGENES_BLOG . $this->imagen);
+            }
+        }
+    }
 }

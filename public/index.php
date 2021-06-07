@@ -33,7 +33,7 @@ $router->get('/admin-blog/crear', [BlogController::class, 'crear']);
 $router->post('/admin-blog/crear', [BlogController::class, 'crear']);
 $router->get('/admin-blog/actualizar', [BlogController::class, 'actualizar']);
 $router->post('/admin-blog/actualizar', [BlogController::class, 'actualizar']);
-$router->post('/admin-blog/eliminar', [VendedorController::class, 'eliminar']);
+$router->post('/admin-blog/eliminar', [BlogController::class, 'eliminar']);
 
 //Zona pública
 $router->get('/', [PaginasController::class, 'index']);

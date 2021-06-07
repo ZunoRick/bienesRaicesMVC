@@ -73,7 +73,10 @@ class ActiveRecord{
         $query = " DELETE FROM ". static::$tabla ." WHERE id = " . self::$db->escape_string($this->id) . " LIMIT 1 ";
         if (self::$db->query($query)) {
             $this->eliminarImagen();
-            header('Location: /public/admin?resultado=3&id='.$this->id.'&tipo='.$this->tipo);
+            if ($this->tipo === 'Post') 
+                header('Location: /public/admin-blog?resultado=3&id='.$this->id.'&tipo='.$this->tipo);
+            else
+                header('Location: /public/admin?resultado=3&id='.$this->id.'&tipo='.$this->tipo);
         }
     }
     

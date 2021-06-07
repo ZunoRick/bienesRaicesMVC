@@ -30,7 +30,7 @@ function sane($html) : string{
 
 //Validar Tipo de contenido
 function validarTipoContenido($tipo){
-    $tipos = ['vendedor', 'propiedad'];
+    $tipos = ['vendedor', 'propiedad', 'post'];
     return in_array($tipo, $tipos);
 }
 

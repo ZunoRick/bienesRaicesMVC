@@ -7,10 +7,13 @@
     <?php
     if ($resultado) {
         $mensaje = mostrarNotificacion(intval($resultado));
+        if ($_GET['tipo'] != 'Post') {
+            header('Location: /public/admin-blog');
+        }
         if ($mensaje && intval($resultado) === 1) { ?>
-            <p class="alerta exito"><?php echo $_GET['tipo'] . " " . sane($mensaje) ?></p>
+            <p class="alerta exito"><?php "Nuevo Post " . sane($mensaje) ?></p>
         <?php } elseif ($mensaje) { ?>
-            <p class="alerta exito"><?php echo $_GET['tipo'] . " " . $urlId . " " . sane($mensaje) ?></p>
+            <p class="alerta exito"><?php echo "Post " . $urlId . " " . sane($mensaje) ?></p>
     <?php }
     }
     ?>
@@ -40,9 +43,9 @@
                     <td><?php echo $entrada->fecha; ?></td>
                     <td><?php echo $entrada->autor; ?></td>
                     <td>
-                        <form method="POST" class="w-100" >
-                            <input type="hidden" name="id" >
-                            <input type="hidden" name="tipo" value="propiedad">
+                        <form method="POST" class="w-100" action="/public/admin-blog/eliminar">
+                            <input type="hidden" name="id" value="<?php echo $entrada->id; ?>">
+                            <input type="hidden" name="tipo" value="post">
                             <input type="submit" class="boton-rojo-block" value="Eliminar">
                         </form>
                         <!-- <img src="/build/img/trash-alt.svg" class="icono-boton"> -->

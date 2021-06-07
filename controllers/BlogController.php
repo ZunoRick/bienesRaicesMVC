@@ -101,6 +101,18 @@ class BlogController{
     }
 
     public static function eliminar(){
-        # code...
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $id = $_POST['id'];
+            $id = filter_var($id, FILTER_VALIDATE_INT);
+    
+            //Validar ID
+            if ($id) {
+                $tipo = $_POST['tipo'];
+                if (validarTipoContenido($tipo)) {
+                    $propiedad = EntradaBlog::find($id);
+                    $propiedad->eliminar();
+                }
+            }
+        }
     }
 }
