@@ -2,6 +2,7 @@
     <h1 data-cy="heading-administrador">Administrador de Bienes Raices</h1>
 
     <a href="/public/admin" class="boton boton-verde">&larr; Volver</a>
+    <a href="/public/admin-blog/crear" class="boton boton-amarillo">Nueva Entrada</a>
 
     <?php
     if ($resultado) {
@@ -14,7 +15,6 @@
     }
     ?>
     
-    <a href="/public/admin-blog/crear" class="boton boton-amarillo">Nueva Entrada</a>
     <h2>Entradas de Blog</h2>
     <table class="propiedades">
         <thead>

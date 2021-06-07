@@ -61,7 +61,46 @@ class BlogController{
         ]);
     }   
 
-    public static function actualizar(){
-        echo "Desde Actualizar";
-    }   
+    public static function actualizar(Router $router){
+        $id = validarORedireccionar('/public/admin-blog');
+        $entrada = EntradaBlog::find($id);
+        $errores = EntradaBlog::getErrores();
+
+        if($_SERVER['REQUEST_METHOD'] === 'POST'){
+            //Asignar los atributos
+            $args = $_POST['entrada'];
+            $entrada->sincronizar($args);
+    
+            $errores = $entrada->validar();
+            //Revisar que el arreglo de errores esté vacío
+            if (empty($errores)) {
+                
+                if ($_FILES['entrada']['tmp_name']['imagen']) {
+                    
+                    //Generar un nombre único
+                    $nombreImagen = md5( uniqid( rand(), true) ) . ".jpg";
+    
+                    //Realiza un resize a la imagen con intervention
+                    $image = Image::make($_FILES['entrada']['tmp_name']['imagen'])->fit(800,600);
+    
+                    /*Setear la imagen*/
+                    $entrada->setImagen($nombreImagen);
+    
+                    //Guarda la imagen en el servidor
+                    $image->save(CARPETA_IMAGENES_BLOG . $nombreImagen);
+                }
+                $entrada->actualizarFecha();
+                $entrada->guardar();
+            }   
+        }
+
+        $router->render('blog/actualizar',[
+            'entrada' => $entrada,
+            'errores' => $errores
+        ]);
+    }
+
+    public static function eliminar(){
+        # code...
+    }
 }

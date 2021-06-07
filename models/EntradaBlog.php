@@ -15,7 +15,7 @@ class EntradaBlog extends ActiveRecord
     public $contenido;
     public $fecha;
     public $autor;
-    public $tipo = 'Entrada';
+    public $tipo = 'Post';
 
     public function __construct($args = [])
     {
@@ -46,5 +46,9 @@ class EntradaBlog extends ActiveRecord
             self::$errores[] = "El autor es obligatorio";
             
         return self::$errores;
+    }
+
+    public function actualizarFecha(){
+        $this->fecha = date('Y/m/d');
     }
 }

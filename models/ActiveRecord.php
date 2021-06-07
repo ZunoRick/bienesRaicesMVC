@@ -39,7 +39,10 @@ class ActiveRecord{
         $resultado = self::$db->query($query);
         //Mensaje de éxito o error
         if ($resultado) {
-            header('Location: /public/admin?resultado=1&tipo='.$this->tipo);
+            if ($this->tipo === 'Post') 
+                header('Location: /public/admin-blog?resultado=1&tipo='.$this->tipo);
+            else
+                header('Location: /public/admin?resultado=1&tipo='.$this->tipo);
         }
     }
 
@@ -58,7 +61,10 @@ class ActiveRecord{
 
         $resultado = self::$db->query($query);
         if ($resultado) {
-            header('Location: /public/admin?resultado=2&id='.$this->id.'&tipo='.$this->tipo);
+            if ($this->tipo === 'Post') 
+                header('Location: /public/admin-blog?resultado=2&id='.$this->id.'&tipo='.$this->tipo);
+            else
+                header('Location: /public/admin?resultado=2&id='.$this->id.'&tipo='.$this->tipo);
         }
     }
 
