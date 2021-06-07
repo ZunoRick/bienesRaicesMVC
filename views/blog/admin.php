@@ -14,7 +14,7 @@
     }
     ?>
     
-    <a href="/public/admin-blog" class="boton boton-amarillo">Nueva Entrada</a>
+    <a href="/public/admin-blog/crear" class="boton boton-amarillo">Nueva Entrada</a>
     <h2>Entradas de Blog</h2>
     <table class="propiedades">
         <thead>

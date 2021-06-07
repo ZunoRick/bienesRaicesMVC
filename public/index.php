@@ -29,6 +29,10 @@ $router->post('/vendedores/eliminar', [VendedorController::class, 'eliminar']);
 
 //Blog
 $router->get('/admin-blog', [BlogController::class, 'listar']);
+$router->get('/admin-blog/crear', [BlogController::class, 'crear']);
+$router->post('/admin-blog/crear', [BlogController::class, 'crear']);
+$router->get('/admin-blog/actualizar', [BlogController::class, 'actualizar']);
+$router->post('/admin-blog/actualizar', [BlogController::class, 'actualizar']);
 
 //Zona pública
 $router->get('/', [PaginasController::class, 'index']);
