@@ -34,12 +34,11 @@
                         <td><img src="/public/imagenes/<?php echo $propiedad->imagen; ?>" class="imagen-tabla" alt=""></td>
                         <td><?php echo "$". $propiedad->precio; ?></td>
                         <td>
-                            <form method="POST" class="w-100" action="/public/propiedades/eliminar">
+                            <form method="POST" class="" action="/public/propiedades/eliminar">
                                 <input type="hidden" name="id" value="<?php echo $propiedad->id; ?>">
                                 <input type="hidden" name="tipo" value="propiedad">
                                 <input type="submit" class="boton-rojo-block" value="Eliminar">
                             </form>
-                            <!-- <img src="/build/img/trash-alt.svg" class="icono-boton"> -->
                                 
                             </a>
                             <a href="/public/propiedades/actualizar?id=<?php echo $propiedad->id; ?>" class="boton-amarillo-block">
@@ -70,7 +69,7 @@
                         <td><?php echo $vendedor->nombre . " " . $vendedor->apellido; ?></td>
                         <td><?php echo $vendedor->telefono; ?></td>
                         <td>
-                            <form method="POST" class="w-100" action="/public/vendedores/eliminar">
+                            <form method="POST" class="" action="/public/vendedores/eliminar">
                                 <input type="hidden" name="id" value="<?php echo $vendedor->id; ?>">
                                 <input type="hidden" name="tipo" value="vendedor">
                                 <input type="submit" class="boton-rojo-block" value="Eliminar">

@@ -44,15 +44,15 @@
                         <form method="POST" class="w-100" action="/public/admin-blog/eliminar">
                             <input type="hidden" name="id" value="<?php echo $entrada->id; ?>">
                             <input type="hidden" name="tipo" value="post">
+                            <img src="/public/build/img/trash-alt.svg" class="icono-boton">
                             <input type="submit" class="boton-rojo-block" value="Eliminar">
                         </form>
-                        <!-- <img src="/build/img/trash-alt.svg" class="icono-boton"> -->
 
-                        </a>
                         <a href="/public/admin-blog/actualizar?id=<?php echo $entrada->id; ?>" class="boton-amarillo-block">
-                            <img src="/public/build/img/edit.svg" class="icono-boton editar">
-                            Actualizar
-                        </a>
+                            <img src="/public/build/img/edit.svg" class="icono-boton editar">Actualizar</a>
+
+                        <a href="/public/entrada?id=<?php echo $entrada->id; ?>" class="boton boton-verde">
+                            <img src="/public/build/img/arrow-go.svg" class="icono-boton ir">Ver detalles</a>
                     </td>
                 </tr>
             <?php endforeach; ?>
