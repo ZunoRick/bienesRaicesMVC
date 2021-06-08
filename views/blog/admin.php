@@ -11,7 +11,7 @@
             header('Location: /public/admin-blog');
         }
         if ($mensaje && intval($resultado) === 1) { ?>
-            <p class="alerta exito"><?php "Nuevo Post " . sane($mensaje) ?></p>
+            <p class="alerta exito"><?php echo "Nuevo Post " . sane($mensaje) ?></p>
         <?php } elseif ($mensaje) { ?>
             <p class="alerta exito"><?php echo "Post " . $urlId . " " . sane($mensaje) ?></p>
     <?php }
@@ -25,7 +25,6 @@
                 <th>ID</th>
                 <th>Título</th>
                 <th>Imagen</th>
-                <th>Resumen</th>
                 <th>Fecha</th>
                 <th>Autor</th>
                 <th>Acciones</th>
@@ -39,7 +38,6 @@
                     <td><?php echo $entrada->id; ?></td>
                     <td><?php echo $entrada->titulo; ?></td>
                     <td><img src="/public/imagenes-blog/<?php echo $entrada->imagen; ?>" class="imagen-tabla" alt=""></td>
-                    <td><?php echo $entrada->summary; ?></td>
                     <td><?php echo $entrada->fecha; ?></td>
                     <td><?php echo $entrada->autor; ?></td>
                     <td>
