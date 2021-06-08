@@ -1,23 +1,11 @@
 <main class="contenedor seccion contenido-centrado">
-        <h1>Guía para la decoración de tu hogar</h1>
+        <h1><?php echo $entrada->titulo; ?></h1>
 
-        <picture>
-            <source srcset="/public/build/img/destacada2.webp" type="image/webp">
-            <source srcset="/public/build/img/destacada2.jpg" type="image/jpeg">
-            <img src="/public/build/img/destacada2.jpg" alt="Imagen de la Propiedad" loading="lazy">
-        </picture>
+        <img src="/public/imagenes-blog/<?php echo $entrada->imagen;?>" alt="Imagen de la Propiedad" loading="lazy">
 
-        <p class="informacion-meta">Escrito el: <span>20/10/2021</span> Por: <span>Admin</span> </p>
+        <p class="informacion-meta">Escrito el: <span><?php echo $entrada->fecha; ?></span> Por: <span><?php echo $entrada->autor;?></span> </p>
 
         <div class="resumen-propiedad">
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores explicabo placeat itaque architecto ab, accusamus quibusdam, cum eligendi neque quidem at, corporis aspernatur similique iusto commodi tempora soluta quas? Voluptate.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores explicabo placeat itaque architecto ab, accusamus quibusdam, cum eligendi neque quidem at, corporis aspernatur similique iusto commodi tempora soluta quas? Voluptate.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores explicabo placeat itaque architecto ab, accusamus quibusdam, cum eligendi neque quidem at, corporis aspernatur similique iusto commodi tempora soluta quas? Voluptate.
-            </p>
-
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores explicabo placeat itaque architecto ab, accusamus quibusdam, cum eligendi neque quidem at, corporis aspernatur similique iusto commodi tempora soluta quas? Voluptate.
-            </p>
+            <p><?php echo $entrada->contenido;?></p>
         </div>
     </main>
