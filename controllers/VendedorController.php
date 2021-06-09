@@ -32,6 +32,10 @@ class VendedorController{
         $vendedor = Vendedor::find($id);
         $errores = Vendedor::getErrores();
 
+        if (!$vendedor) {
+            header('Location: /public/admin');
+        }
+
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
             //Asignar los atributos
             $args = $_POST['vendedor'];

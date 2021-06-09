@@ -19,6 +19,8 @@ table.propiedades{
     margin-top: 4rem;
     width: 100%;
     border-spacing: 0;
+    text-align: center;
+    border-collapse: collapse;
 
     thead{
         background-color: $verde;
@@ -32,11 +34,19 @@ table.propiedades{
     .imagen-tabla{
         width: 10rem;
     }
+
+    tr{
+        border-top: 1px solid $grisOscuro;
+
+        &:first-of-type{
+            border: none;
+        }
+    }
 }
 
 td{
-    .boton-rojo-block,
-    .boton-amarillo-block{
+    .boton-amarillo-block,
+    .boton-verde{
         display: flex;
         align-items: center;
         justify-content: center;
@@ -50,10 +60,36 @@ td{
             &.editar{
                 width: 2.7rem;
             }
+
+            &.ir{
+                width: 2.2rem;
+            }
         }
     }
 }
 
 .imagen-small{
     width: 50rem;
+}
+
+.w-100{
+    position: relative;
+
+    .icono-boton{
+        width: 2rem;
+        margin: 1rem;
+        filter: invert(100%);
+        position: absolute;
+        top: 0;
+        right: 11rem;
+        bottom: 0;
+        left: 3.3rem;
+        width: 2.1rem;
+    }
+
+    .boton-rojo-block{
+        text-align: end;
+        padding: 1.5rem 3rem;
+        margin-top: 2rem;
+    }
 }

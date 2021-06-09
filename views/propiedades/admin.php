@@ -13,6 +13,7 @@
         ?>
         <a href="/public/propiedades/crear" class="boton boton-verde">Nueva Propiedad</a>
         <a href="/public/vendedores/crear" class="boton boton-amarillo">Nuevo(a) Vendedor</a>
+        <a href="/public/admin-blog" class="boton boton-amarillo">Administrar Blog</a>
         <h2>Propiedades</h2>
         <table class="propiedades">
             <thead>
@@ -33,18 +34,20 @@
                         <td><img src="/public/imagenes/<?php echo $propiedad->imagen; ?>" class="imagen-tabla" alt=""></td>
                         <td><?php echo "$". $propiedad->precio; ?></td>
                         <td>
-                            <form method="POST" class="w-100" action="/public/propiedades/eliminar">
+                            <form method="POST" class="" action="/public/propiedades/eliminar">
                                 <input type="hidden" name="id" value="<?php echo $propiedad->id; ?>">
                                 <input type="hidden" name="tipo" value="propiedad">
                                 <input type="submit" class="boton-rojo-block" value="Eliminar">
                             </form>
-                            <!-- <img src="/build/img/trash-alt.svg" class="icono-boton"> -->
                                 
                             </a>
                             <a href="/public/propiedades/actualizar?id=<?php echo $propiedad->id; ?>" class="boton-amarillo-block">
                                 <img src="/public/build/img/edit.svg" class="icono-boton editar">
                                 Actualizar
                             </a>
+
+                            <a href="/public/propiedad?id=<?php echo $propiedad->id; ?>" class="boton boton-verde">
+                            <img src="/public/build/img/arrow-go.svg" class="icono-boton ir">Ver detalles</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
@@ -58,6 +61,7 @@
                     <th>ID</th>
                     <th>Nombre</th>
                     <th>Teléfono</th>
+                    <th>Correo</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
@@ -68,8 +72,9 @@
                         <td><?php echo $vendedor->id; ?></td>
                         <td><?php echo $vendedor->nombre . " " . $vendedor->apellido; ?></td>
                         <td><?php echo $vendedor->telefono; ?></td>
+                        <td><?php echo $vendedor->email; ?></td>
                         <td>
-                            <form method="POST" class="w-100" action="/public/vendedores/eliminar">
+                            <form method="POST" class="" action="/public/vendedores/eliminar">
                                 <input type="hidden" name="id" value="<?php echo $vendedor->id; ?>">
                                 <input type="hidden" name="tipo" value="vendedor">
                                 <input type="submit" class="boton-rojo-block" value="Eliminar">
