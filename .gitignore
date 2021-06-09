@@ -1,6 +1,7 @@
 node_modules/
 vendor/
 public/imagenes/
+public/imagenes-blog
 
 cypress/fixtures
 cypress/plugins
