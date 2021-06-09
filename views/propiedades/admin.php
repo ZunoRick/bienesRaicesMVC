@@ -45,6 +45,9 @@
                                 <img src="/public/build/img/edit.svg" class="icono-boton editar">
                                 Actualizar
                             </a>
+
+                            <a href="/public/propiedad?id=<?php echo $propiedad->id; ?>" class="boton boton-verde">
+                            <img src="/public/build/img/arrow-go.svg" class="icono-boton ir">Ver detalles</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
@@ -58,6 +61,7 @@
                     <th>ID</th>
                     <th>Nombre</th>
                     <th>Teléfono</th>
+                    <th>Correo</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
@@ -68,6 +72,7 @@
                         <td><?php echo $vendedor->id; ?></td>
                         <td><?php echo $vendedor->nombre . " " . $vendedor->apellido; ?></td>
                         <td><?php echo $vendedor->telefono; ?></td>
+                        <td><?php echo $vendedor->email; ?></td>
                         <td>
                             <form method="POST" class="" action="/public/vendedores/eliminar">
                                 <input type="hidden" name="id" value="<?php echo $vendedor->id; ?>">

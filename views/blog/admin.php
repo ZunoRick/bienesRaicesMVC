@@ -1,5 +1,5 @@
 <main class="contenedor seccion">
-    <h1 data-cy="heading-administrador">Administrador de Bienes Raices</h1>
+    <h1 data-cy="heading-administrador">Administrador de Blog</h1>
 
     <a href="/public/admin" class="boton boton-verde">&larr; Volver</a>
     <a href="/public/admin-blog/crear" class="boton boton-amarillo">Nueva Entrada</a>
@@ -17,8 +17,7 @@
     <?php }
     }
     ?>
-    
-    <h2>Entradas de Blog</h2>
+
     <table class="propiedades">
         <thead>
             <tr>

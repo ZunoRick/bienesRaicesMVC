@@ -74,6 +74,10 @@ class PropiedadController{
         $vendedores = Vendedor::all();
         $errores = Propiedad::getErrores();
 
+        if (!$propiedad) {
+            header('Location: /public/admin');
+        }
+
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
             //Asignar los atributos
             $args = $_POST['propiedad'];
