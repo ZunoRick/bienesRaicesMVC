@@ -31,12 +31,13 @@ class BlogController{
                 //Generar un nombre único
                 $nombreImagen = md5( uniqid( rand(), true) ) . ".jpg";
                 $image = Image::make($_FILES['entrada']['tmp_name']['imagen'])->fit(800,600);
-                $entrada->setImagen($nombreImagen);
             } else{
                 $nombreImagen = "ImagenBlog.jpg";
                 $image = Image::make("../src/img/blog3.jpg")->fit(800,600);
-                $entrada->setImagen($nombreImagen);
+                
             }
+
+            $entrada->setImagen($nombreImagen);
 
             $errores = $entrada->validar();
             
