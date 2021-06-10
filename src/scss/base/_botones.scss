@@ -4,6 +4,8 @@
 
 .boton-amarillo{
     @include boton($amarillo, inline-block);
+    display: inline-flex;
+    align-items: center;
 }
 
 .boton-verde{

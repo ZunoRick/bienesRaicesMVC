@@ -4,6 +4,7 @@ namespace Controllers;
 
 use Model\EntradaBlog;
 use Model\Propiedad;
+use Model\Vendedor;
 use MVC\Router;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
@@ -38,14 +39,23 @@ class PaginasController
 
     public static function propiedad(Router $router)
     {
-        $id = validarORedireccionar('/public/');
+        $id = validarORedireccionar('public/');
         $propiedad = Propiedad::find($id);
-
-        if (is_null($propiedad))
+        
+        if (is_null($propiedad))   //Valida si se encontró una propiedad 
             header("Location: /public/propiedades");
 
+        $vendedor = Vendedor::find($propiedad->getVendedorId());
+            
+        if (!isset($_SESSION))  //Verifica si hay una sesión abierta 
+            session_start();
+        
+        $auth = $_SESSION['login'] ?? false;
+
         $router->render('paginas/propiedad', [
-            'propiedad' => $propiedad
+            'propiedad' => $propiedad,
+            'vendedor' => $vendedor,
+            'auth' => $auth
         ]);
     }
 
@@ -65,8 +75,14 @@ class PaginasController
         if (!$entrada) 
             header('Location: /public/blog');
             
+        if (!isset($_SESSION))  //Verifica si hay una sesión abierta 
+            session_start();
+        
+        $auth = $_SESSION['login'] ?? false;
+
         $router->render('paginas/entrada', [
-            'entrada' => $entrada
+            'entrada' => $entrada,
+            'auth' => $auth
         ]);
     }
 

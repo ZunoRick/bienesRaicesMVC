@@ -52,9 +52,13 @@ class Propiedad extends ActiveRecord{
         if (!$this->vendedorId) 
             self::$errores[] = "Elige un vendedor";
 
-         if (!$this->imagen)
-             self::$errores[] = "La imagen es obligatoria";
+        if (!$this->imagen)
+            self::$errores[] = "La imagen es obligatoria";
 
         return self::$errores;
+    }
+
+    public function getVendedorId(){
+        return $this->vendedorId;
     }
 }
