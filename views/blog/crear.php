@@ -1,5 +1,5 @@
 <main class="contenedor seccion">
-    <h1>Crear Entrada</h1>
+    <h1 data-cy="heading-crear-entrada">Crear Entrada</h1>
 
     <a href="/public/admin-blog" class="boton boton-verde">&larr; Volver</a>
 

@@ -5,15 +5,15 @@
             if ($resultado) {
                 $mensaje = mostrarNotificacion( intval($resultado) );
                 if ($mensaje && intval($resultado) === 1){ ?>
-                    <p class="alerta exito"><?php echo $_GET['tipo']." ".sane($mensaje)?></p>
+                    <p data-cy="alerta-admin" class="alerta exito"><?php echo $_GET['tipo']." ".sane($mensaje)?></p>
                 <?php } elseif ($mensaje){ ?>
-                    <p class="alerta exito"><?php echo $_GET['tipo']." ".$urlId." ".sane($mensaje)?></p>
+                    <p data-cy="alerta-admin" class="alerta exito"><?php echo $_GET['tipo']." ".$urlId." ".sane($mensaje)?></p>
                 <?php }             
             } 
         ?>
-        <a href="/public/propiedades/crear" class="boton boton-verde">Nueva Propiedad</a>
-        <a href="/public/vendedores/crear" class="boton boton-amarillo">Nuevo(a) Vendedor</a>
-        <a href="/public/admin-blog" class="boton boton-amarillo">Administrar Blog</a>
+        <a data-cy="crear-propiedad" href="/public/propiedades/crear" class="boton boton-verde">Nueva Propiedad</a>
+        <a data-cy="crear-vendedor" href="/public/vendedores/crear" class="boton boton-amarillo">Nuevo(a) Vendedor</a>
+        <a data-cy="ir-admin-blog" href="/public/admin-blog" class="boton boton-amarillo">Administrar Blog</a>
         <h2>Propiedades</h2>
         <table class="propiedades">
             <thead>

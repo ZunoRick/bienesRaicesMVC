@@ -1,5 +1,5 @@
 <main class="contenedor seccion">
-        <h1>Actualizar vendedor(a)</h1>
+        <h1 data-cy="heading-actualizar-vendedor">Actualizar vendedor(a)</h1>
 
         <a href="../admin" class="boton boton-verde">&larr; Volver</a>
 

@@ -1,5 +1,5 @@
 <main class="contenedor seccion">
-    <h1>Actualizar Propiedad</h1>
+    <h1 data-cy="heading-actualizar-propiedad">Actualizar Propiedad</h1>
 
     <a href="../admin" class="boton boton-verde">&larr; Volver</a>
 

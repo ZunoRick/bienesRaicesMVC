@@ -1,5 +1,5 @@
 <main class="contenedor seccion">
-        <h1>Registrar vendedor(a)</h1>
+        <h1 data-cy="heading-crear-vendedor">Registrar Vendedor(a)</h1>
 
         <a href="../admin" class="boton boton-verde">&larr; Volver</a>
 

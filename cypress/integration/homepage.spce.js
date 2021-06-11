@@ -35,7 +35,7 @@ describe('Carga la página principal', () =>{
         cy.get('[data-cy="enlace-propiedad"]').first().click();
         cy.get('[data-cy="titulo-propiedad"]').should('exist');
 
-        // cy.wait(1000);
+        cy.wait(1000);
         cy.go('back');
     });
 
@@ -47,7 +47,7 @@ describe('Carga la página principal', () =>{
         cy.get('[data-cy="todas-propiedades"]').click();
         cy.get('[data-cy="heading-propiedades"]').invoke('text').should('equal', 'Casas y Depas en Venta');
 
-        // cy.wait(1000);
+        cy.wait(1000);
         cy.go('back');
     });
 
@@ -62,7 +62,7 @@ describe('Carga la página principal', () =>{
 
         cy.get('[data-cy="heading-contacto"]').should('exist');
 
-        // cy.wait(1000);
+        cy.wait(1000);
         cy.visit('/');
     });
 
