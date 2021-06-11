@@ -39,7 +39,7 @@ class Router{
             //La URL exister y hay una función asociada
             call_user_func($fn, $this);
         } else{
-            echo "Error 404";
+            header('Location: /public/not-found');
         }
     }
 

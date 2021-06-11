@@ -88,9 +88,9 @@ class PaginasController
 
     public static function contacto(Router $router)
     {
+        $mensaje = null;
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             //Instantiation and passing `true` enables exceptions
-            $mensaje = null;
             $respuestas = $_POST['contacto'];
             $mail = new PHPMailer(true);
 
@@ -144,5 +144,9 @@ class PaginasController
         $router->render('paginas/contacto', [
             'mensaje' => $mensaje
         ]);
+    }
+
+    public static function error(Router $router){
+        $router->render('paginas/not-found');
     }
 }
