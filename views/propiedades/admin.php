@@ -11,10 +11,12 @@
                 <?php }             
             } 
         ?>
+
         <a data-cy="crear-propiedad" href="/public/propiedades/crear" class="boton boton-verde">Nueva Propiedad</a>
         <a data-cy="crear-vendedor" href="/public/vendedores/crear" class="boton boton-amarillo">Nuevo(a) Vendedor</a>
         <a data-cy="ir-admin-blog" href="/public/admin-blog" class="boton boton-amarillo">Administrar Blog</a>
         <h2>Propiedades</h2>
+        
         <table class="propiedades">
             <thead>
                 <tr>
