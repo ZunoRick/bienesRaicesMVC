@@ -9,7 +9,7 @@
             </div>
         <?php endforeach; ?>
 
-        <form class="formulario" method="POST">
+        <form data-cy="form-actualizar-vendedor" class="formulario" method="POST">
             <?php include __DIR__.'/formulario.php'; ?>
             <div class="alinear-derecha">
                 <input type="submit" value="Guardar Cambios" class="boton boton-verde">

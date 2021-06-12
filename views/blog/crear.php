@@ -9,7 +9,7 @@
         </div>
     <?php endforeach; ?>
 
-    <form action="/public/admin-blog/crear" class="formulario" method="POST" enctype="multipart/form-data">
+    <form data-cy="form-crear-entrada" action="/public/admin-blog/crear" class="formulario" method="POST" enctype="multipart/form-data">
         <?php include __DIR__.'/formulario.php'; ?>
         <div class="alinear-derecha">
             <input type="submit" value="Publicar Entrada" class="boton boton-verde">

@@ -9,7 +9,7 @@
             </div>
         <?php endforeach; ?>
 
-        <form action="/public/vendedores/crear" class="formulario" method="POST">
+        <form data-cy="form-vendedor" action="/public/vendedores/crear" class="formulario" method="POST">
         <?php include __DIR__.'/formulario.php'; ?>
             <div class="alinear-derecha">
                 <input type="submit" value="Registrar Vendedor" class="boton boton-verde">

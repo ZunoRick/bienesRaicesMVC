@@ -11,9 +11,9 @@
             header('Location: /public/admin-blog');
         }
         if ($mensaje && intval($resultado) === 1) { ?>
-            <p class="alerta exito"><?php echo "Nuevo Post " . sane($mensaje) ?></p>
+            <p data-cy="alerta-blog-admin" class="alerta exito"><?php echo "Nuevo Post " . sane($mensaje) ?></p>
         <?php } elseif ($mensaje) { ?>
-            <p class="alerta exito"><?php echo "Post " . $urlId . " " . sane($mensaje) ?></p>
+            <p data-cy="alerta-blog-admin" class="alerta exito"><?php echo "Post " . $urlId . " " . sane($mensaje) ?></p>
     <?php }
     }
     ?>
@@ -40,18 +40,16 @@
                     <td><?php echo $entrada->fecha; ?></td>
                     <td><?php echo $entrada->autor; ?></td>
                     <td>
-                        <form method="POST" class="w-100" action="/public/admin-blog/eliminar">
+                        <form data-cy="eliminar-entrada" method="POST" class="w-100" action="/public/admin-blog/eliminar">
                             <input type="hidden" name="id" value="<?php echo $entrada->id; ?>">
                             <input type="hidden" name="tipo" value="post">
                             <img src="/public/build/img/trash-alt.svg" class="icono-boton">
                             <input type="submit" class="boton-rojo-block" value="Eliminar">
                         </form>
 
-                        <a href="/public/admin-blog/actualizar?id=<?php echo $entrada->id; ?>" class="boton-amarillo-block">
-                            <img src="/public/build/img/edit.svg" class="icono-boton editar">Actualizar</a>
+                        <a data-cy="btn-actualizar-entrada" href="/public/admin-blog/actualizar?id=<?php echo $entrada->id; ?>" class="boton-amarillo-block"><img src="/public/build/img/edit.svg" class="icono-boton editar">Actualizar</a>
 
-                        <a href="/public/entrada?id=<?php echo $entrada->id; ?>" class="boton boton-verde">
-                            <img src="/public/build/img/arrow-go.svg" class="icono-boton ir">Ver detalles</a>
+                        <a data-cy="btn-ver-entrada" href="/public/entrada?id=<?php echo $entrada->id; ?>" class="boton boton-verde"><img src="/public/build/img/arrow-go.svg" class="icono-boton ir">Ver detalles</a>
                     </td>
                 </tr>
             <?php endforeach; ?>

@@ -1,12 +1,10 @@
 <main class="contenedor seccion contenido-centrado">
 
     <?php if ($auth) {?>
-        <div class="elements-admin">
+        <div data-cy="elements-admin" class="elements-admin">
             <a href="/public/admin" class="boton boton-verde">&larr; Volver</a>
             <p>Venta a cargo de: <?php echo $vendedor->nombre . " ". $vendedor->apellido;?> </p>
-            <a href="/public/propiedades/actualizar?id=<?php echo $propiedad->id; ?>" class="boton-amarillo">
-                <img src="/public/build/img/edit.svg" class="icono-boton editar">Actualizar
-            </a>
+            <a data-cy="btn-actualizar-propiedad" href="/public/propiedades/actualizar?id=<?php echo $propiedad->id; ?>" class="boton-amarillo"><img src="/public/build/img/edit.svg" class="icono-boton editar">Actualizar</a>
         </div>
     <?php } ?>
 

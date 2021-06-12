@@ -9,7 +9,7 @@
         </div>
     <?php endforeach; ?>
 
-    <form data-cy="form-propiedad" action="/public/propiedades/crear" class="formulario" method="POST" enctype="multipart/form-data">
+    <form data-cy="form-crear-propiedad" action="/public/propiedades/crear" class="formulario" method="POST" enctype="multipart/form-data">
         <?php include __DIR__.'/formulario.php'; ?>
         <div class="alinear-derecha">
             <input type="submit" value="Crear Propiedad" class="boton boton-verde">

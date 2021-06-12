@@ -42,6 +42,7 @@ describe('Probar la Autenticación', () => {
         cy.get('[data-cy="formulario-login"]').submit();
 
         cy.get('[data-cy="heading-administrador"]').should('exist');
+        cy.get('[data-cy="cierre-sesion"]').should('exist');
         cy.get('[data-cy="heading-administrador"]').should('have.text', 'Administrador de Bienes Raices');
     });
 });

@@ -41,7 +41,7 @@
                         <a href="/public/blog">Blog</a>
                         <a href="/public/contacto">Contacto</a>
                         <?php if ($auth): ?>
-                            <a href="/public/logout">Cerrar Sesión</a>
+                            <a data-cy="cierre-sesion" href="/public/logout">Cerrar Sesión</a>
                         <?php endif; ?>
                     </nav>
                 </div>

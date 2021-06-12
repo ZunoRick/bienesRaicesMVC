@@ -9,7 +9,7 @@
         </div>
     <?php endforeach; ?>
 
-    <form class="formulario" method="POST" enctype="multipart/form-data">
+    <form data-cy="form-actualizar-propiedad" class="formulario" method="POST" enctype="multipart/form-data">
         <?php include __DIR__.'/formulario.php'; ?>
         <div class="alinear-derecha">
             <input type="submit" value="Actualizar Propiedad" class="boton boton-verde">
